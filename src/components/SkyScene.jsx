@@ -46,7 +46,7 @@ export default function SkyScene() {
     ];
 
     return (
-        <div className="h-[1800vh] bg-gradient-to-b from-sky-400 via-sky-700 to-black">
+        <div className="h-[1200vh] bg-gradient-to-b from-sky-400 via-sky-700 to-black">
             <div className="sticky top-0 h-screen w-full overflow-hidden flex items-center justify-center">
 
                 {/* Permanent Background Cloud (Cloud 6) */}
