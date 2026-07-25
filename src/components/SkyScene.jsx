@@ -46,7 +46,7 @@ export default function SkyScene() {
     ];
 
     return (
-        <div className="h-[1200vh] bg-gradient-to-b from-sky-400 via-sky-700 to-black">
+        <div className="h-[600vh] bg-gradient-to-b from-sky-400 via-sky-700 to-black">
             <div className="sticky top-0 h-screen w-full overflow-hidden flex items-center justify-center">
 
                 {/* Permanent Background Cloud (Cloud 6) */}
@@ -80,7 +80,7 @@ export default function SkyScene() {
                 {/* Dynamic Text (Birthday or Not) */}
                 <motion.div
                     style={{ opacity: textOpacity, y: textY }}
-                    className="absolute top-[75%] flex flex-col items-center w-full px-4 z-30 pointer-events-none"
+                    className="absolute top-[70%] flex flex-col items-center w-full px-4 z-30 pointer-events-none"
                 >
                     <h1 className="text-5xl md:text-7xl font-bold text-white drop-shadow-[0_0_20px_rgba(255,255,255,0.8)] text-center">
                         {isBirthday ? "Happy Birthday Harsh!" : "Wait a minute..."}
