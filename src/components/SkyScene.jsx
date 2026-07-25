@@ -114,7 +114,7 @@ export default function SkyScene() {
                         <directionalLight position={[10, 10, 5]} intensity={2} />
                         <Environment preset="city" />
 
-                        <Airplane scrollProgress={scrollYProgress} />
+                        <Airplane scrollProgress={scrollYProgress} />        
                     </Canvas>
                 </div>
 

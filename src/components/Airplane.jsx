@@ -16,11 +16,11 @@ export default function Airplane({ scrollProgress }) {
     // Phase 1 : Hidden
     // -----------------------------
     if (t < 0.45) {
-      plane.visible = false;
-      return;
+     plane.position.set(-100, -100, -100);
+plane.scale.setScalar(0.001);
     }
 
-    plane.visible = true;
+   
 
     // -----------------------------
     // Phase 2 : Fly towards camera
