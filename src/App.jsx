@@ -25,6 +25,7 @@ const allAssets = [
 
 export default function App() {
   const [isLoading, setIsLoading] = useState(true);
+  const [loadingProgress, setLoadingProgress] = useState(0); // <-- NEW STATE
   const [audioStarted, setAudioStarted] = useState(false);
 
   // Audio Refs
@@ -37,10 +38,15 @@ export default function App() {
 
     const handleAssetLoaded = () => {
       loadedAssetsCount++;
+      
+      // Calculate and set percentage
+      const progress = Math.round((loadedAssetsCount / totalAssets) * 100);
+      setLoadingProgress(progress);
+
       if (loadedAssetsCount === totalAssets) {
         setTimeout(() => {
           setIsLoading(false);
-        }, 2000); 
+        }, 1500); // Give user a brief moment to see 100% completion
       }
     };
 
@@ -70,7 +76,8 @@ export default function App() {
   return (
     <main className="relative w-full h-screen">
       {isLoading ? (
-        <LoadingScreen />
+        // Pass progress to LoadingScreen
+        <LoadingScreen progress={loadingProgress} /> 
       ) : !audioStarted ? (
         <AudioPermissionScreen onStart={handleStartExperience} />
       ) : (
