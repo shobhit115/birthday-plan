@@ -3,7 +3,7 @@ import Cloud from './Cloud';
 import { Canvas } from '@react-three/fiber';
 import { Environment } from '@react-three/drei';
 import Airplane from './Airplane';
-
+import { useEffect, useState } from "react";
 // Ensure these point to your actual assets folder
 import cloud1 from '../assets/cloud1.svg';
 import cloud2 from '../assets/cloud2.svg';
@@ -11,6 +11,8 @@ import cloud3 from '../assets/cloud3.svg';
 import cloud4 from '../assets/cloud4.svg';
 import cloud5 from '../assets/cloud5.svg';
 import cloud6 from '../assets/cloud6.svg';
+
+import moon from '../assets/moon.svg'
 
 import nightBackground from '../assets/background.jpg';
 
@@ -24,7 +26,35 @@ export default function SkyScene() {
 
     // 1. Night sky fades in towards the end
     const nightOpacity = useTransform(scrollYProgress, [0.55, 1], [0, 0.4]);
-    
+
+    const moonOpacity = useTransform(scrollYProgress, [0, 1], [0.2, 0.8]);
+    const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth < 768);
+        };
+
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
+    const moonX = useTransform(
+        scrollYProgress,
+        [0, 1],
+        isMobile
+            ? ["15vw", "-40vw"]    // Mobile
+            : ["-15vw", "-40vw"]   // Desktop
+    );
+
+    const moonY = useTransform(
+        scrollYProgress,
+        [0, 1],
+        isMobile
+            ? ["5vh", "20vh"] // Mobile
+            : [" 0vh", "20vh"]     // Desktop
+    );
+
+
     // 2. Scroll Prompt fades out very quickly at the beginning
     const scrollPromptOpacity = useTransform(scrollYProgress, [0, 0.1], [1, 0]);
 
@@ -50,12 +80,30 @@ export default function SkyScene() {
             <div className="sticky top-0 h-screen w-full overflow-hidden flex items-center justify-center">
 
                 {/* Permanent Background Cloud (Cloud 6) */}
+                <motion.img
+                    src={moon}
+                    alt="Moon"
+                    style={{
+                        opacity: moonOpacity,
+                        x: moonX,
+                        y: moonY,
+                    }}
+                    className="
+                    absolute
+                    top-0
+                    left-1/2
+                    -translate-x-1/2
+                    w-20 md:w-32
+                    pointer-events-none
+                    z-10
+                "
+                />
                 <img
                     src={cloud6}
                     alt="background sky"
                     className="absolute inset-0 w-full h-full object-cover pointer-events-none opacity-60 z-0"
                 />
-                
+
                 {/* Fading Night Sky Background */}
                 <motion.img
                     src={nightBackground}
@@ -65,7 +113,7 @@ export default function SkyScene() {
                 />
 
                 {/* Scroll Down Prompt */}
-                <motion.div 
+                <motion.div
                     style={{ opacity: scrollPromptOpacity }}
                     className="absolute top-[20%] flex flex-col items-center z-50 pointer-events-none"
                 >
@@ -80,14 +128,14 @@ export default function SkyScene() {
                 {/* Dynamic Text (Birthday or Not) */}
                 <motion.div
                     style={{ opacity: textOpacity, y: textY }}
-                    className="absolute top-[70%] flex flex-col items-center w-full px-4 z-30 pointer-events-none"
+                    className="absolute top-[60%] flex flex-col items-center w-full px-4 z-30 pointer-events-none"
                 >
                     <h1 className="text-5xl md:text-7xl font-bold text-white drop-shadow-[0_0_20px_rgba(255,255,255,0.8)] text-center">
                         {isBirthday ? "Happy Birthday Harsh!" : "Wait a minute..."}
                     </h1>
                     <p className="text-xl md:text-3xl text-sky-100 mt-4 font-light tracking-wide drop-shadow-md text-center">
-                        {isBirthday 
-                            ? "May all your dreams take flight. Enjoy your special day!" 
+                        {isBirthday
+                            ? "May all your dreams take flight. Enjoy your special day!"
                             : "It is not your birthday today! Still Wishing you lots of happiness, good health, and success. Have an amazing day!"}
                     </p>
                 </motion.div>
@@ -102,7 +150,7 @@ export default function SkyScene() {
                         scrollProgress={scrollYProgress}
                     />
                 ))}
-                
+
                 <div className="absolute inset-0 pointer-events-none z-40">
                     <Canvas
                         camera={{
@@ -114,7 +162,7 @@ export default function SkyScene() {
                         <directionalLight position={[10, 10, 5]} intensity={2} />
                         <Environment preset="city" />
 
-                        <Airplane scrollProgress={scrollYProgress} />        
+                        <Airplane scrollProgress={scrollYProgress} />
                     </Canvas>
                 </div>
 
