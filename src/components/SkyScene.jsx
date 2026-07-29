@@ -5,14 +5,14 @@ import { Environment } from '@react-three/drei';
 import Airplane from './Airplane';
 import { useEffect, useState } from "react";
 
-import cloud1 from '../assets/cloud1.svg';
-import cloud2 from '../assets/cloud2.svg';
-import cloud3 from '../assets/cloud3.svg';
-import cloud4 from '../assets/cloud4.svg';
-import cloud5 from '../assets/cloud5.svg';
+import cloud1 from '../assets/cloud1.webp';
+import cloud2 from '../assets/cloud2.webp';
+import cloud3 from '../assets/cloud3.webp';
+import cloud4 from '../assets/cloud4.webp';
+import cloud5 from '../assets/cloud5.webp';
 import cloud6 from '../assets/cloud6.svg';
-import moon from '../assets/moon.svg';
-import nightBackground from '../assets/background.jpg';
+import moon from '../assets/moon.webp';
+import nightBackground from '../assets/background.webp';
 
 export default function SkyScene({ planeAudioRef }) {
     const { scrollYProgress } = useScroll();
@@ -92,7 +92,7 @@ const isBirthday = diffInDays >= 0 && diffInDays <= 3;
                     src={moon}
                     alt="Moon"
                     style={{ opacity: moonOpacity, x: moonX, y: moonY }}
-                    className="absolute top-0 left-1/2 -translate-x-1/2 w-20 md:w-32 pointer-events-none z-10"
+                    className="absolute top-0 left-1/2 -translate-x-1/2 w-16 md:w-28 pointer-events-none z-10"
                 />
                 <img
                     src={cloud6}

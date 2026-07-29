@@ -1,7 +1,7 @@
 // Import a few of your existing clouds to decorate the background
-import cloud1 from '../assets/cloud1.svg';
-import cloud2 from '../assets/cloud4.svg';
-import cloud3 from '../assets/cloud3.svg';
+import cloud1 from '../assets/cloud1.webp';
+import cloud2 from '../assets/cloud4.webp';
+import cloud3 from '../assets/cloud3.webp';
 
 export default function AudioPermissionScreen({ onStart }) {
   return (
