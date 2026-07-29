@@ -92,7 +92,7 @@ const isBirthday = diffInDays >= 0 && diffInDays <= 3;
                     src={moon}
                     alt="Moon"
                     style={{ opacity: moonOpacity, x: moonX, y: moonY }}
-                    className="absolute top-0 left-1/2 -translate-x-1/2 w-16 md:w-28 pointer-events-none z-10"
+                    className="absolute top-0 left-1/2 -translate-x-1/2 w-11 md:w-18 pointer-events-none z-10"
                 />
                 <img
                     src={cloud6}
