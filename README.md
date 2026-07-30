@@ -1,16 +1,132 @@
-# React + Vite
+# ✨ Birthday Plane
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+An immersive, interactive birthday experience built with React, Three.js, and Framer Motion.
 
-Currently, two official plugins are available:
+Instead of creating a traditional birthday card, I designed a scroll-based storytelling experience in which a 3D airplane carries my wishes across the sky. As the user scrolls, floating clouds drift by, the atmosphere gradually transforms from day to night, and a glowing moon emerges alongside a beautiful galaxy filled with stars, turning a simple birthday message into an unforgettable journey.
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🌐 Live Demo
 
-## React Compiler
+🚀 Live Website: https://birthday-plane.vercel.app/
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+💻 GitHub Repository: https://github.com/shobhit115/birthday-plan
 
-## Expanding the Oxlint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+## 📸 Preview
+
+![Preview](./public/birthday-plane.mp3)
+
+---
+
+## ✨ Features
+
+- Smooth scroll-driven animations
+- Dynamic cloud movement
+- Parallax effects
+- Interactive 3D airplane model
+- Day-to-night sky transition
+- Animated moon and galaxy scene
+- Responsive design
+- Optimized rendering performance
+
+---
+
+## 🛠️ Tech Stack
+
+### Frontend
+
+- React 19
+- Vite
+- Tailwind CSS 4
+
+### Animation
+
+- Framer Motion
+- Framer Motion 3D
+
+### 3D Graphics
+
+- Three.js
+- React Three Fiber
+- Drei
+
+---
+
+## 📂 Project Structure
+
+```text
+src
+│
+├── assets
+│   ├── clouds
+│   ├── moon
+│   ├── stars
+│   └── plane
+│
+├── components
+│   ├── Airplane.jsx
+│   ├── Cloud.jsx
+│   ├── Galaxy.jsx
+│   ├── LoadingScreen.jsx
+│   ├── Moon.jsx
+│   └── SkyScene.jsx
+│
+├── App.jsx
+└── main.jsx
+```
+
+---
+
+## ⚙️ Installation
+
+Clone the repository.
+
+```bash
+git clone https://github.com/shobhit115/birthday-plan.git
+```
+
+Move into the project directory.
+
+```bash
+cd birthday-plan
+```
+
+Install dependencies.
+
+```bash
+npm install
+```
+
+Start the development server.
+
+```bash
+npm run dev
+```
+
+Build the project.
+
+```bash
+npm run build
+```
+
+---
+
+## 🎨 Inspiration
+
+The project was inspired by the idea of turning a simple birthday wish into an emotional visual journey.
+
+The entire experience combines storytelling, animation, music, and three-dimensional graphics to create a memorable digital gift.
+
+---
+
+## 👨‍💻 Author
+
+**Shobhit Singh**
+
+- GitHub: https://github.com/shobhit115
+- Portfolio: https://bitsho.com/
+
+---
+
+⭐ If you enjoyed this project, consider giving it a star.
