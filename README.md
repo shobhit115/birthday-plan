@@ -15,7 +15,7 @@ Instead of creating a traditional birthday card, I designed a scroll-based story
 
 ## 📸 Preview
 
-![Preview](./public/birthday-plane.mp3)
+![Preview](./public/birthday-plane.mp4)
 
 ---
 
